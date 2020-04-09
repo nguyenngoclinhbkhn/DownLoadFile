@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 android.Manifest.permission.READ_EXTERNAL_STORAGE
             ), 111
         )
-        progressDownload.max = 100
+        progressDownload.max = 4999
 
         handler = object : Handler() {
             override fun handleMessage(msg: Message) {
@@ -155,8 +155,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 override fun onNext(t: Photo) {
                     Log.e("TAG", "onNext $t")
                     listPhoto.add(t)
-                    progressDownload.progress = listPhoto.size * 100 / 100
-                    txtPercent.text = " ${listPhoto.size * 100 / 100}  %"
+                    progressDownload.progress = listPhoto.size * 100 / 4999
+                    txtPercent.text = " ${listPhoto.size * 100 / 4999}  %"
                 }
                 override fun onError(e: Throwable) {
                 }
@@ -198,7 +198,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             progressDialog?.cancel()
         }
     }
-    
+
 
 
     fun getBitmapFromURL(src: String?): Bitmap? {
@@ -222,7 +222,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun createFake(){
-        for (i in 0..99){
+        for (i in 0..4999){
             listFake.add(Photo(1,1, "sdf", "http://placehold.jp/150x150.png", "sdf"))
         }
     }
