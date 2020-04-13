@@ -26,6 +26,12 @@
             android:id="@+id/btnDownVer2"
             android:text="Down ver2"
             android:textAllCaps="false"></Button>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Down ver3"
+            android:id="@+id/btnDownVer3"></Button>
     </LinearLayout>
 
 
